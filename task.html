@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        table{
+          font-family: arial, sans-serif;
+          width: 50%;
+        }
+        thead{
+            background-color: #696969;
+        }
+        td{
+          border:black;
+          text-align: left;
+          padding: 20px;
+        }
+        tr:nth-child(even) {
+          background-color: #ccc;
+        }
+        select{
+            padding: 10px;
+            border-radius: 15px;
+            background-color:#fff;
+        }
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            padding-top: 90px;
+            border-radius: 15px;
+           
+        }
+        form div {
+            background-color: #fff;
+            width: 100%;
+            padding: 10px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        form label {
+            font-weight: bold;
+        }
+        form select,
+        form input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+        }
+        form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #1a1717;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #696969;
+        }
+        .startBtn {
+            padding: 10px;
+            background-color: #696969; 
+            color: white;
+            border: 2px;
+            display:flex;
+            justify-content:space-between;
+            margin-right:10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .resetBtn {
+            padding: 10px;
+            background-color:#696969; 
+            color: white;
+            border: 2px;
+            border-radius: 5px;
+            display:flex;
+            justify-content:space-between;
+            cursor: pointer;
+        }
+        .startBtn:hover{
+            background-color:#72A0C1;
+            margin-right:10px;
+        }
+        .resetBtn:hover {
+            background-color: #72A0C1;
+            align-items:center;
+            margin-right:10px;
+        }
+        </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker</title>
+</head>
+<body>
+    <h1 style="text-align: center;color:black">Task Tracker</h1>
+    <div style="display: flex;flex-direction: row;">       
+    
+    <div style="padding: 105px;padding-top: 20px;padding-left: 40px;">
+        <select  id="drops">
+            <option>All</option>
+            <option>Work</option>
+            <option>PersonalWork</option>   
+          </select>
+          <table id="dataTable">
+            <thead>
+                <tr>                                                                                                   
+                    <b>
+                        <td>Category</td>
+                        <td>Sub Category</td>
+                        <td>Duration</td>
+                        <td>Task</td>
+                    </b>
+                </tr>
+            </thead>
+            <tbody>
+    
+            </tbody>
+        </table>
+    </div>
+    
+    <form id="taskForm">
+        <div style="background-color:#72A0C1;width: 150px;padding:10px;border-radius: 15px;text-align: center;border-color:black">Start a new task</div>
+
+        <label>Category</label><br/>
+        <select id="category"style="border:2px solid black;padding:5px;">
+            <option >Work</option>
+            <option>PersonalWork</option>
+        </select><br/>
+        <label>Sub Category</label><br/>
+        <input type="text"  id="subCategory"placeholder="enter the sub category" style="border: 2px solid black; padding: 5px;"><br/>
+        <label>Duration</label><br/>
+        <input type="time"  id="duration"  placeholder="set the timer" style="border:2px solid black;padding:5px;"><br/>
+        <label>Task</label><br/>
+        <input type="text"  id="task" placeholder="enter the task" style="border:2px solid black;padding:5px;"><br/>
+        <button type="submit"  id= "submit "style="border:2px solid black;padding:5px;placeholder:submit;">Submit</button>
+        <div class="stopwatch">00:00:00</div>
+        <div style="display: flex; flex-direction: row;background-color: white;">
+            <button id="button" type='button' onclick='startstopwatch()' class="startBtn">Start</button>
+        <button id="button" type='button' onclick="resetwatch()" class="resetBtn">Reset</button><br><br>
+        </div> 
+    </form>
+</div>
+    
+    <script src="index.js"></script>
+</body>
+</html>
